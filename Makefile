@@ -3,6 +3,7 @@ SOURCES=Sopc2DTS.java \
 	sopc2dts/LogListener.java sopc2dts/Logger.java \
 	sopc2dts/generators/AbstractSopcGenerator.java \
 	sopc2dts/generators/DTBGenerator2.java \
+	sopc2dts/generators/DTBHex32Generator.java \
 	sopc2dts/generators/DTBHex8Generator.java \
 	sopc2dts/generators/DTGenerator.java \
 	sopc2dts/generators/DTSGenerator2.java \
@@ -46,12 +47,15 @@ SOURCES=Sopc2DTS.java \
 	sopc2dts/lib/components/SopcComponentDescription.java \
 	sopc2dts/lib/components/arm/CortexA9GIC.java \
 	sopc2dts/lib/components/altera/GenericTristateController.java \
+	sopc2dts/lib/components/altera/PCIeCompiler.java \
+	sopc2dts/lib/components/altera/PCIeRootPort.java \
 	sopc2dts/lib/components/altera/SICEpcs.java \
 	sopc2dts/lib/components/altera/SICLan91c111.java \
 	sopc2dts/lib/components/altera/SICSgdma.java \
 	sopc2dts/lib/components/altera/SICTrippleSpeedEthernet.java \
 	sopc2dts/lib/components/altera/TSEMonolithic.java \
 	sopc2dts/lib/components/altera/InterfaceGenerator.java \
+	sopc2dts/lib/components/altera/A10InterfaceGenerator.java \
 	sopc2dts/lib/components/altera/InterruptBridge.java \
 	sopc2dts/lib/components/altera/InterruptLatencyCounter.java \
 	sopc2dts/lib/components/altera/hps/ClockManager.java \
@@ -65,7 +69,8 @@ SOURCES=Sopc2DTS.java \
 	sopc2dts/lib/components/base/FlashPartition.java \
 	sopc2dts/lib/components/base/GpioController.java \
 	sopc2dts/lib/components/base/SCDSelfDescribing.java \
-	sopc2dts/lib/components/base/SICBridge.java sopc2dts/lib/components/base/SICFlash.java \
+	sopc2dts/lib/components/base/SICBridge.java \
+	sopc2dts/lib/components/base/SICFlash.java \
 	sopc2dts/lib/components/base/SICI2CMaster.java \
 	sopc2dts/lib/components/base/SICEthernet.java \
 	sopc2dts/lib/components/base/SICSpiMaster.java \

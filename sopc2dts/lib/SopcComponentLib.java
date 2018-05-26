@@ -41,11 +41,13 @@ import sopc2dts.Logger;
 import sopc2dts.Logger.LogLevel;
 import sopc2dts.lib.components.SopcComponentDescription;
 import sopc2dts.lib.components.BasicComponent;
+import sopc2dts.lib.components.altera.A10InterfaceGenerator;
 import sopc2dts.lib.components.altera.GenericTristateController;
 import sopc2dts.lib.components.altera.InterfaceGenerator;
 import sopc2dts.lib.components.altera.InterruptBridge;
 import sopc2dts.lib.components.altera.InterruptLatencyCounter;
 import sopc2dts.lib.components.altera.MultiBridge;
+import sopc2dts.lib.components.altera.PCIeCompiler;
 import sopc2dts.lib.components.altera.SICEpcs;
 import sopc2dts.lib.components.altera.SICLan91c111;
 import sopc2dts.lib.components.altera.SICSgdma;
@@ -184,6 +186,8 @@ public class SopcComponentLib implements ContentHandler {
 			return new VIPFrameBuffer(className, instanceName, version, getScdByClassName(className));
 		} else if (className.equalsIgnoreCase("altera_interface_generator")) {
 			return new InterfaceGenerator(className, instanceName, version, getScdByClassName(className));
+		} else if (className.equalsIgnoreCase("altera_arria10_interface_generator")) {
+			return new A10InterfaceGenerator(className, instanceName, version, getScdByClassName(className));
 		} else if (className.equalsIgnoreCase("altera_irq_bridge")) {
 			return new InterruptBridge(className, instanceName, version, getScdByClassName(className));
 		} else if (className.equalsIgnoreCase("interrupt_latency_counter")) {
@@ -252,6 +256,8 @@ public class SopcComponentLib implements ContentHandler {
 				} else {
 					return new GpioController(comp);
 				}
+			} else if (scd.getGroup().equalsIgnoreCase("pcie")) {
+				return PCIeCompiler.getPCIeComponent(comp);
 			}
 		}
 		return comp;
